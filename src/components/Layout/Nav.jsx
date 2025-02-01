@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setscrolled] = useState(false)
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
+
+  useEffect(() => {
+    const handleScrolled = () => {
+      if (window.scrollY > 50){
+        setscrolled(true);
+      }
+      else{
+        setscrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScrolled);
+    return () => window.removeEventListener("scroll", handleScrolled);
+  }, []);
+  
+
   return (
-    <header className="bg-gray-700">
-      <div className="mx-auto max-w-screen-xl p-4 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 bg-gray-700">
+      <div className={`${scrolled ? "px-4" : "p-4"} mx-auto max-w-screen-xl sm:px-6 lg:px-8 transform duration-1000`}>
         <div className="flex h-16 items-center justify-between">
           <a className="block text-teal-600" href="#">
             <span className="uppercase text-white text-3xl font-bold">

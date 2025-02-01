@@ -1,29 +1,31 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setscrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-
   useEffect(() => {
     const handleScrolled = () => {
-      if (window.scrollY > 50){
-        setscrolled(true);
-      }
-      else{
-        setscrolled(false);
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
       }
     };
     window.addEventListener("scroll", handleScrolled);
     return () => window.removeEventListener("scroll", handleScrolled);
   }, []);
-  
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-gray-700">
-      <div className={`${scrolled ? "px-4" : "p-4"} mx-auto max-w-screen-xl sm:px-6 lg:px-8 transform duration-1000`}>
+      <div
+        className={`${
+          scrolled ? "px-4" : "p-4"
+        } mx-auto max-w-screen-xl sm:px-6 lg:px-8 transform duration-1000`}
+      >
         <div className="flex h-16 items-center justify-between">
           <Link className="block text-teal-600" to="/">
             <span className="uppercase text-white text-3xl font-bold">
@@ -38,27 +40,36 @@ const Nav = () => {
             <ul className="flex items-center uppercase gap-6 text-sm">
               <li>
                 <NavLink
-                  className="text-white font-medium transition duration-500 hover:text-white/75"
+                  className={({ isActive }) =>
+                    `text-white font-medium transition duration-500 hover:text-white/75 ${
+                      isActive ? "text-yellow-500 " : ""
+                    }`
+                  }
                   to="/about"
-                  activeClassName="text-white/75"
                 >
                   About
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-white font-medium transition duration-500 hover:text-white/75"
+                  className={({ isActive }) =>
+                    `text-white font-medium transition duration-500 hover:text-white/75 ${
+                      isActive ? "text-yellow-500" : ""
+                    }`
+                  }
                   to="/protofolio"
-                  activeClassName="text-white/75"
                 >
                   Protofolio
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  className="text-white font-medium transition duration-500 hover:text-white/75"
+                  className={({ isActive }) =>
+                    `text-white font-medium transition duration-500 hover:text-white/75 ${
+                      isActive ? "text-yellow-500" : ""
+                    }`
+                  }
                   to="/contact"
-                  activeClassName="text-white/75"
                 >
                   Contact
                 </NavLink>
@@ -88,36 +99,43 @@ const Nav = () => {
         </div>
 
         <div
-          className={`
-            ${menuOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}
-            overflow-hidden transition-all duration-700 ease-in-out
-            md:hidden mt-4 bg-gray-800 p-4 rounded-lg
-          `}
+          className={`${
+            menuOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+          } overflow-hidden transition-all duration-700 ease-in-out md:hidden mt-4 bg-gray-800 p-4 rounded-lg`}
         >
           <ul className="flex flex-col gap-4 text-white uppercase text-sm">
             <li>
               <NavLink
-                className="block font-medium transition duration-500 hover:text-gray-400"
+                className={({ isActive }) =>
+                  `block font-medium transition duration-500 hover:text-gray-400 ${
+                    isActive ? "text-yellow-500" : ""
+                  }`
+                }
                 to="/about"
-                activeClassName="text-gray-400"
               >
                 About
               </NavLink>
             </li>
             <li>
               <NavLink
-                className="block font-medium transition duration-500 hover:text-gray-400"
+                className={({ isActive }) =>
+                  `block font-medium transition duration-500 hover:text-gray-400 ${
+                    isActive ? "text-yellow-500" : ""
+                  }`
+                }
                 to="/protofolio"
-                activeClassName="text-gray-400"
               >
                 Protofolio
               </NavLink>
             </li>
             <li>
               <NavLink
-                className="block font-medium transition duration-500 hover:text-gray-400"
+                className={({ isActive }) =>
+                  `block font-medium transition duration-500 hover:text-gray-400 ${
+                    isActive ? "text-yellow-500" : ""
+                  }`
+                }
                 to="/contact"
-                activeClassName="text-gray-400"
               >
                 Contact
               </NavLink>
@@ -130,4 +148,5 @@ const Nav = () => {
 };
 
 export default Nav;
+
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Link, NavLink } from "react-router-dom";
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setscrolled] = useState(false)
@@ -25,11 +25,11 @@ const Nav = () => {
     <header className="fixed top-0 left-0 right-0 bg-gray-700">
       <div className={`${scrolled ? "px-4" : "p-4"} mx-auto max-w-screen-xl sm:px-6 lg:px-8 transform duration-1000`}>
         <div className="flex h-16 items-center justify-between">
-          <a className="block text-teal-600" href="#">
+          <Link className="block text-teal-600" to="/">
             <span className="uppercase text-white text-3xl font-bold">
               Start Framework
             </span>
-          </a>
+          </Link>
 
           <nav
             aria-label="Global"
@@ -37,28 +37,31 @@ const Nav = () => {
           >
             <ul className="flex items-center uppercase gap-6 text-sm">
               <li>
-                <a
+                <NavLink
                   className="text-white font-medium transition duration-500 hover:text-white/75"
-                  href="#"
+                  to="/about"
+                  activeClassName="text-white/75"
                 >
                   About
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
+                <NavLink
                   className="text-white font-medium transition duration-500 hover:text-white/75"
-                  href="#"
+                  to="/protofolio"
+                  activeClassName="text-white/75"
                 >
                   Protofolio
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
+                <NavLink
                   className="text-white font-medium transition duration-500 hover:text-white/75"
-                  href="#"
+                  to="/contact"
+                  activeClassName="text-white/75"
                 >
                   Contact
-                </a>
+                </NavLink>
               </li>
             </ul>
           </nav>
@@ -93,28 +96,31 @@ const Nav = () => {
         >
           <ul className="flex flex-col gap-4 text-white uppercase text-sm">
             <li>
-              <a
+              <NavLink
                 className="block font-medium transition duration-500 hover:text-gray-400"
-                href="#"
+                to="/about"
+                activeClassName="text-gray-400"
               >
                 About
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
+              <NavLink
                 className="block font-medium transition duration-500 hover:text-gray-400"
-                href="#"
+                to="/protofolio"
+                activeClassName="text-gray-400"
               >
                 Protofolio
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
+              <NavLink
                 className="block font-medium transition duration-500 hover:text-gray-400"
-                href="#"
+                to="/contact"
+                activeClassName="text-gray-400"
               >
                 Contact
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -124,3 +130,4 @@ const Nav = () => {
 };
 
 export default Nav;
+

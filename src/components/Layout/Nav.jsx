@@ -38,7 +38,7 @@ const Nav = () => {
             <ul className="flex items-center uppercase gap-6 text-sm">
               <li>
                 <a
-                  className="text-white font-medium transition hover:text-white/75"
+                  className="text-white font-medium transition duration-500 hover:text-white/75"
                   href="#"
                 >
                   About
@@ -46,7 +46,7 @@ const Nav = () => {
               </li>
               <li>
                 <a
-                  className="text-white font-medium transition hover:text-white/75"
+                  className="text-white font-medium transition duration-500 hover:text-white/75"
                   href="#"
                 >
                   Protofolio
@@ -54,7 +54,7 @@ const Nav = () => {
               </li>
               <li>
                 <a
-                  className="text-white font-medium transition hover:text-white/75"
+                  className="text-white font-medium transition duration-500 hover:text-white/75"
                   href="#"
                 >
                   Contact
@@ -94,7 +94,7 @@ const Nav = () => {
           <ul className="flex flex-col gap-4 text-white uppercase text-sm">
             <li>
               <a
-                className="block font-medium transition hover:text-gray-400"
+                className="block font-medium transition duration-500 hover:text-gray-400"
                 href="#"
               >
                 About
@@ -102,7 +102,7 @@ const Nav = () => {
             </li>
             <li>
               <a
-                className="block font-medium transition hover:text-gray-400"
+                className="block font-medium transition duration-500 hover:text-gray-400"
                 href="#"
               >
                 Protofolio
@@ -110,7 +110,7 @@ const Nav = () => {
             </li>
             <li>
               <a
-                className="block font-medium transition hover:text-gray-400"
+                className="block font-medium transition duration-500 hover:text-gray-400"
                 href="#"
               >
                 Contact

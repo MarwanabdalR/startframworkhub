@@ -20,11 +20,11 @@ const Nav = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-gray-700 z-50">
+    <header className="fixed top-0 left-0 right-0 bg-gray-700 z-50 ">
       <div
         className={`${
           scrolled ? "px-4" : "p-4"
-        } mx-auto max-w-screen-xl sm:px-6 lg:px-8 transform duration-1000`}
+        } mx-auto max-w-screen-xl sm:px-6 lg:px-8 transform duration-1000 `}
       >
         <div className="flex h-16 items-center justify-between">
           <Link className="block text-teal-600" to="/">

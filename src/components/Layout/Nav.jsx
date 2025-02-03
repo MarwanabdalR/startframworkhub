@@ -20,7 +20,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-gray-700 z-50 ">
+    <header className="fixed top-0 left-0 right-0 bg-cyan-900 z-50 ">
       <div
         className={`${
           scrolled ? "px-4" : "p-4"

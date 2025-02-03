@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <>
-      <section className="bg-teal-500 py-24">
+      <section className="bg-amber-800 py-24">
         <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
           <div className="mx-auto  text-center">
             <h1 className="text-center text-5xl my-5 text-white font-bold">

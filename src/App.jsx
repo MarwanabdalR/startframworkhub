@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home.jsx";
 import About from "./pages/About/About.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import Protofolio from "./pages/Protofolio/Protofolio.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,10 @@ function App() {
           path: "/protofolio",
           element: <Protofolio />,
         },
+        {
+          path: "*",
+          element: <ErrorPage />, // Error page for unmatched routes
+        },
       ],
     },
   ]);
@@ -40,3 +45,4 @@ function App() {
 }
 
 export default App;
+
